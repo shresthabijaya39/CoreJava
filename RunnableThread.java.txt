@@ -1,0 +1,28 @@
+package MultiThreading;
+
+public class RunnableThread implements Runnable {
+
+	@Override
+	public void run() {
+		System.out.println("I am from runnable Thread.");
+	}
+
+	public static void main(String[] args) {
+		RunnableThread r = new RunnableThread();
+		Thread t = new Thread(r);
+		t.start();
+
+		// Annonymous Runnable Thread.
+		Runnable run = new Runnable() {
+
+			@Override
+			public void run() {
+				System.out.println("I am from Runnable annonymous.");
+			}
+		};
+
+		Thread t1 = new Thread(run);
+		t1.start();
+	}
+
+}
